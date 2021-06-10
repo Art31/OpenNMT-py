@@ -1,0 +1,77 @@
+## Where the samples will be written
+save_data: user_defined_models/rnn_align_bpe/example
+
+## Where the vocab(s) will be written
+src_vocab: user_defined_models/rnn_align_bpe/example.vocab.src
+tgt_vocab: user_defined_models/rnn_align_bpe/example.vocab.tgt
+
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: data/TED_br-en_br_train.txt
+        path_tgt: data/TED_br-en_en_train.txt
+        transforms: [onmt_tokenize]
+        weight: 1
+    valid:
+        path_src: data/TED_br-en_br_dev.txt
+        path_tgt: data/TED_br-en_en_dev.txt
+        transforms: [onmt_tokenize]
+
+# Where to save the checkpoints
+save_model: user_defined_models/rnn_align_bpe/model
+save_checkpoint_steps: 500
+train_steps: 70000
+valid_steps: 500
+report_every: 500
+
+# model 
+encoder_type: brnn
+decoder_type: rnn
+word_vec_size: 512
+rnn_size: 512
+enc_layers: 2
+dec_layers: 2
+
+# attention
+global_attention: mlp
+bridge: 'true'
+
+# optimizer
+accum_count: 8
+optim: adam
+adam_beta1: 0.9
+adam_beta2: 0.998
+decay_method: noam
+learning_rate: 0.0002
+max_grad_norm: 0.0
+start_decay_steps: 30000
+decay_steps: 5000
+learning_rate_decay: 0.00002
+
+# hyperparameters
+batch_size: 512
+batch_type: tokens
+normalization: tokens
+dropout: 0.1
+label_smoothing: 0.1
+
+# Tokenization options
+src_subword_type: sentencepiece
+src_subword_model: user_defined_models/rnn_align_bpe/nmt_src.model
+tgt_subword_type: sentencepiece
+tgt_subword_model: user_defined_models/rnn_align_bpe/nmt_trg.model
+
+# Number of candidates for SentencePiece sampling
+subword_nbest: 20
+# Smoothing parameter for SentencePiece sampling
+subword_alpha: 0.1
+# Specific arguments for pyonmttok
+src_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
+tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
