@@ -22,10 +22,10 @@ data:
 
 # Where to save the checkpoints
 save_model: user_defined_models/rnn_align_bpe/model
-save_checkpoint_steps: 500
+save_checkpoint_steps: 7000
 train_steps: 70000
-valid_steps: 500
-report_every: 500
+valid_steps: 700
+report_every: 700
 
 # model 
 encoder_type: brnn
