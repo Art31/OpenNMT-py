@@ -26,6 +26,7 @@ save_checkpoint_steps: 7000
 train_steps: 70000
 valid_steps: 700
 report_every: 700
+seed: 0
 
 # model 
 encoder_type: brnn

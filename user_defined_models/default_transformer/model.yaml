@@ -1,0 +1,63 @@
+## Where the samples will be written
+save_data: user_defined_models/default_transformer/example
+
+## Where the vocab(s) will be written
+src_vocab: user_defined_models/default_transformer/example.vocab.src
+tgt_vocab: user_defined_models/default_transformer/example.vocab.tgt
+
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: data/TED_br-en_br_train.txt
+        path_tgt: data/TED_br-en_en_train.txt
+    valid:
+        path_src: data/TED_br-en_br_dev.txt
+        path_tgt: data/TED_br-en_en_dev.txt
+
+# Where to save the checkpoints
+save_model: user_defined_models/default_transformer/model
+save_checkpoint_steps: 1000
+train_steps: 10000
+valid_steps: 500
+report_every: 500
+seed: 0
+
+# model 
+decoder_type: transformer
+encoder_type: transformer
+word_vec_size: 512
+rnn_size: 512
+layers: 6
+transformer_ff: 1024
+heads: 8
+# additional info necessary for transformer
+position_encoding: 'true'
+param_init: 0.0
+param_init_glorot: 'true'
+
+# optimizer
+accum_count: 8
+optim: adam
+adam_beta1: 0.9
+adam_beta2: 0.998
+decay_method: noam
+learning_rate: 0.001
+max_grad_norm: 0.0
+start_decay_steps: 8000
+decay_steps: 1000
+learning_rate_decay: 0.0002
+
+# hyperparameters
+batch_size: 1024
+batch_type: tokens
+normalization: tokens
+dropout: 0.1
+label_smoothing: 0.1
+max_generator_batches: 2
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
