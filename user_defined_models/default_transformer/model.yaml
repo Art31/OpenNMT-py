@@ -51,7 +51,7 @@ decay_steps: 1000
 learning_rate_decay: 0.0002
 
 # hyperparameters
-batch_size: 256 # default 64
+batch_size: 64 # default 64
 batch_type: sents # default sents
 normalization: sents # default sents
 dropout: 0.1 # default 0.3
