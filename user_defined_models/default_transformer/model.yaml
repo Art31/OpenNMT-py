@@ -26,8 +26,8 @@ report_every: 500
 seed: 0
 
 # model 
-decoder_type: transformer
-encoder_type: transformer
+decoder_type: transformer # default rnn
+encoder_type: transformer # default rnn
 word_vec_size: 512
 rnn_size: 512
 layers: 6
@@ -51,12 +51,12 @@ decay_steps: 1000
 learning_rate_decay: 0.0002
 
 # hyperparameters
-batch_size: 1024
-batch_type: tokens
-normalization: tokens
-dropout: 0.1
-label_smoothing: 0.1
-max_generator_batches: 2
+batch_size: 1024 # default 64
+batch_type: sents # default sents
+normalization: sents # default sents
+dropout: 0.1 # default 0.3
+label_smoothing: 0.12 # default 0
+max_generator_batches: 2 # default 32
 
 # Train on a single GPU
 world_size: 1
