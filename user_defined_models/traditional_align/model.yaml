@@ -1,0 +1,60 @@
+## Where the samples will be written
+save_data: user_defined_models/traditional_align/example
+
+## Where the vocab(s) will be written
+src_vocab: user_defined_models/traditional_align/example.vocab.src
+tgt_vocab: user_defined_models/traditional_align/example.vocab.tgt
+
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: data/TED_br-en_br_train.txt
+        path_tgt: data/TED_br-en_en_train.txt
+    valid:
+        path_src: data/TED_br-en_br_dev.txt
+        path_tgt: data/TED_br-en_en_dev.txt
+
+# Where to save the checkpoints
+save_model: user_defined_models/traditional_align/model
+save_checkpoint_steps: 12500
+train_steps: 50000
+valid_steps: 500
+report_every: 500
+seed: 0
+
+# model 
+encoder_type: brnn
+decoder_type: rnn
+word_vec_size: 512
+rnn_size: 512
+
+# attention
+copy_attn: 'true'
+global_attention: mlp
+reuse_copy_attn: 'true'
+bridge: 'true'
+
+# optimizer
+accum_count: 8
+optim: adam
+adam_beta1: 0.9
+adam_beta2: 0.998
+decay_method: noam
+learning_rate: 0.002
+max_grad_norm: 0.0
+start_decay_steps: 25000
+decay_steps: 5000
+learning_rate_decay: 0.0002
+
+# hyperparameters
+batch_size: 512
+batch_type: sents
+normalization: sents
+dropout: 0.1
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
