@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "translate",
+            "type": "shell",
+            "command": "onmt_translate",
+            "args": ["-model", 
+                "user_defined_models/default_transformer/model_step_70000.pt",
+                "-src",
+                " data/TED_br-en_br_test.txt",
+                "-output",
+                "user_defined_models/default_transformer/pred_70000.txt",
+                "-gpu",
+                "0", 
+                "-verbose"]
+        }
+    ]
+}

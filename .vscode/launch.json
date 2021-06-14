@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": ["-model", 
+                "user_defined_models/default_transformer/model_step_70000.pt",
+                "-src",
+                " data/TED_br-en_br_test.txt",
+                "-output",
+                "user_defined_models/default_transformer/pred_70000.txt",
+                "-gpu",
+                "0", 
+                "-verbose"]
+        }
+    ]
+}
