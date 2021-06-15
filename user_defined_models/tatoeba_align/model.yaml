@@ -19,8 +19,8 @@ data:
 
 # Where to save the checkpoints
 save_model: user_defined_models/tatoeba_align/model
-save_checkpoint_steps: 10000
-train_steps: 100000
+save_checkpoint_steps: 2000
+train_steps: 50000
 valid_steps: 500
 report_every: 500
 seed: 0
@@ -43,10 +43,10 @@ optim: adam
 adam_beta1: 0.9
 adam_beta2: 0.998
 decay_method: noam
-learning_rate: 0.0025
+learning_rate: 0.004
 max_grad_norm: 0.0
-start_decay_steps: 50000
-decay_steps: 10000
+start_decay_steps: 2000
+decay_steps: 1000
 learning_rate_decay: 0.0002
 
 # hyperparameters
