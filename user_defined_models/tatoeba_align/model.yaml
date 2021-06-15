@@ -28,8 +28,8 @@ seed: 0
 # model 
 encoder_type: brnn
 decoder_type: rnn
-word_vec_size: 512
-rnn_size: 512
+word_vec_size: 256
+rnn_size: 256
 
 # attention
 copy_attn: 'true'
