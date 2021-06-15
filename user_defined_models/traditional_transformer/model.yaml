@@ -19,7 +19,7 @@ data:
 
 # Where to save the checkpoints
 save_model: user_defined_models/traditional_transformer/model
-save_checkpoint_steps: 7000
+save_checkpoint_steps: 14000
 train_steps: 70000
 valid_steps: 700
 report_every: 700

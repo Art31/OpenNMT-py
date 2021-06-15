@@ -19,8 +19,8 @@ data:
 
 # Where to save the checkpoints
 save_model: user_defined_models/traditional_align/model
-save_checkpoint_steps: 12500
-train_steps: 50000
+save_checkpoint_steps: 20000
+train_steps: 100000
 valid_steps: 500
 report_every: 500
 seed: 0
@@ -28,8 +28,8 @@ seed: 0
 # model 
 encoder_type: brnn
 decoder_type: rnn
-word_vec_size: 512
-rnn_size: 512
+word_vec_size: 256
+rnn_size: 256
 
 # attention
 copy_attn: 'true'
@@ -43,14 +43,14 @@ optim: adam
 adam_beta1: 0.9
 adam_beta2: 0.998
 decay_method: noam
-learning_rate: 0.002
+learning_rate: 0.0021
 max_grad_norm: 0.0
-start_decay_steps: 25000
-decay_steps: 5000
+start_decay_steps: 50000
+decay_steps: 10000
 learning_rate_decay: 0.0002
 
 # hyperparameters
-batch_size: 128
+batch_size: 256
 batch_type: sents
 normalization: sents
 dropout: 0.1
