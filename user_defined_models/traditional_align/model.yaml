@@ -28,8 +28,8 @@ seed: 0
 # model 
 encoder_type: brnn
 decoder_type: rnn
-word_vec_size: 256
-rnn_size: 256
+word_vec_size: 512
+rnn_size: 512
 
 # attention
 copy_attn: 'true'
@@ -43,7 +43,7 @@ optim: adam
 adam_beta1: 0.9
 adam_beta2: 0.998
 decay_method: noam
-learning_rate: 0.0021
+learning_rate: 0.0025
 max_grad_norm: 0.0
 start_decay_steps: 50000
 decay_steps: 10000
