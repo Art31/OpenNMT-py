@@ -1,9 +1,9 @@
 ## Where the samples will be written
-save_data: user_defined_models/traditional_align/example
+save_data: user_defined_models/tatoeba_align/example
 
 ## Where the vocab(s) will be written
-src_vocab: user_defined_models/traditional_align/example.vocab.src
-tgt_vocab: user_defined_models/traditional_align/example.vocab.tgt
+src_vocab: user_defined_models/tatoeba_align/example.vocab.src
+tgt_vocab: user_defined_models/tatoeba_align/example.vocab.tgt
 
 # Prevent overwriting existing files in the folder
 overwrite: False
@@ -18,7 +18,7 @@ data:
         path_tgt: data/eng_dev.txt
 
 # Where to save the checkpoints
-save_model: user_defined_models/traditional_align/model
+save_model: user_defined_models/tatoeba_align/model
 save_checkpoint_steps: 10000
 train_steps: 100000
 valid_steps: 500
