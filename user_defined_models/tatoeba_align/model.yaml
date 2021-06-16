@@ -19,7 +19,7 @@ data:
 
 # Where to save the checkpoints
 save_model: user_defined_models/tatoeba_align/model
-save_checkpoint_steps: 2000
+save_checkpoint_steps: 500
 train_steps: 50000
 valid_steps: 500
 report_every: 500
